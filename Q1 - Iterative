@@ -1,25 +1,21 @@
-#include <stdio.h>
+void setup() {
+  Serial.begin(9600);
+  int n = 10;  // Number of terms to display
 
-void fibonacci_iterative(int n) {
-    int i = 0, j = 1, k = 0, fib;
+  int i = 0, j = 1, k = 0, fib;
 
-    for (int count = 0; count < n; count++) {
-        printf("%d ", k);
-        fib = i + j;
-        i = j;
-        j = fib;
-        k = i;
-    }
-    printf("\n");
+  Serial.println("Fibonacci Series (Iterative):");
+  for (int count = 0; count < n; count++) {
+    Serial.print(k);
+    Serial.print(" ");
+    fib = i + j;
+    i = j;
+    j = fib;
+    k = i;
+  }
+  Serial.println();
 }
 
-int main() {
-    int n;
-    printf("Enter number of terms: ");
-    scanf("%d", &n);
-
-    printf("Fibonacci Series (Iterative):\n");
-    fibonacci_iterative(n);
-
-    return 0;
+void loop() {
+  // Nothing here
 }
