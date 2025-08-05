@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+void fibonacci_iterative(int n) {
+    int i = 0, j = 1, k = 0, fib;
+
+    for (int count = 0; count < n; count++) {
+        printf("%d ", k);
+        fib = i + j;
+        i = j;
+        j = fib;
+        k = i;
+    }
+    printf("\n");
+}
+
+int main() {
+    int n;
+    printf("Enter number of terms: ");
+    scanf("%d", &n);
+
+    printf("Fibonacci Series (Iterative):\n");
+    fibonacci_iterative(n);
+
+    return 0;
+}
